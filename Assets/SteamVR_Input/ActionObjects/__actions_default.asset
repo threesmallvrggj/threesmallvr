@@ -20,6 +20,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2cb413fb0f621df409e91bf4e373f5e0, type: 2}
   - {fileID: 11400000, guid: 5de62bfd8b4111e4da282fba03c043cc, type: 2}
   - {fileID: 11400000, guid: b1d0cc36367b98f48bbe2eb5cd7b4f59, type: 2}
+  - {fileID: 11400000, guid: 1200e12a04011c24e9cdffd1fd03ac77, type: 2}
   - {fileID: 11400000, guid: e5419e9a4e966234aac1be465cb097b6, type: 2}
   nonVisualInActions:
   - {fileID: 11400000, guid: 9a66cfef907e15e4289679c3c3edbaa4, type: 2}
@@ -27,6 +28,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 97e292f4f8d34e246b7f8ee9c5569b8e, type: 2}
   - {fileID: 11400000, guid: 84b241cd300f96c4bb2d2aa49c19fad8, type: 2}
   - {fileID: 11400000, guid: b1d0cc36367b98f48bbe2eb5cd7b4f59, type: 2}
+  - {fileID: 11400000, guid: 1200e12a04011c24e9cdffd1fd03ac77, type: 2}
   visualActions:
   - {fileID: 11400000, guid: 754c736891ff8d940880047f4abd6523, type: 2}
   - {fileID: 11400000, guid: 2cb413fb0f621df409e91bf4e373f5e0, type: 2}

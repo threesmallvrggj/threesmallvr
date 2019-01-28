@@ -324,10 +324,11 @@
     <Compile Include="Assets\PhotonChatApi\ChatState.cs" />
     <Compile Include="Assets\PhotonChatApi\ChatUserStatus.cs" />
     <Compile Include="Assets\PhotonChatApi\IChatClientListener.cs" />
-    <Compile Include="Assets\PlayerIK.cs" />
-    <Compile Include="Assets\PlayerMove.cs" />
     <Compile Include="Assets\Scripts\Button_VR.cs" />
     <Compile Include="Assets\Scripts\PhotonManager.cs" />
+    <Compile Include="Assets\Scripts\PlayerHandEvent.cs" />
+    <Compile Include="Assets\Scripts\PlayerIK.cs" />
+    <Compile Include="Assets\Scripts\PlayerMove.cs" />
     <Compile Include="Assets\SteamVR\Extras\SteamVR_GazeTracker.cs" />
     <Compile Include="Assets\SteamVR\Extras\SteamVR_TestThrow.cs" />
     <Compile Include="Assets\SteamVR\Extras\SteamVR_TestTrackedCamera.cs" />

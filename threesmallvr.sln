@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2017
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "threesmallvr", "threesmallvr.csproj", "{AA32ECCF-E47D-E3E1-E88F-D4C54FFDC350}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "threesmallvr.Plugins", "threesmallvr.Plugins.csproj", "{A51C18D7-B1E2-FA60-5A60-B20085D1B1AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "threesmallvr.Editor", "threesmallvr.Editor.csproj", "{84F7CD42-9FB8-1B7A-0658-D27697401C89}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AA32ECCF-E47D-E3E1-E88F-D4C54FFDC350}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA32ECCF-E47D-E3E1-E88F-D4C54FFDC350}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA32ECCF-E47D-E3E1-E88F-D4C54FFDC350}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA32ECCF-E47D-E3E1-E88F-D4C54FFDC350}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A51C18D7-B1E2-FA60-5A60-B20085D1B1AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A51C18D7-B1E2-FA60-5A60-B20085D1B1AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A51C18D7-B1E2-FA60-5A60-B20085D1B1AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A51C18D7-B1E2-FA60-5A60-B20085D1B1AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84F7CD42-9FB8-1B7A-0658-D27697401C89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84F7CD42-9FB8-1B7A-0658-D27697401C89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84F7CD42-9FB8-1B7A-0658-D27697401C89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84F7CD42-9FB8-1B7A-0658-D27697401C89}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
