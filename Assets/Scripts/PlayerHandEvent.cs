@@ -27,25 +27,41 @@ public class PlayerHandEvent : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-    }
-    private void OnTriggerStay(Collider other)
-    {
-        CatchItem(other);
+        CatchItem();
     }
 
     /// <summary>
     /// 抓取物品
     /// </summary>
     /// <param name="item">物品</param>
-    private void CatchItem(Collider item)
+    private void CatchItem()
     {
 
-        if (!item.CompareTag("Item")) return;
 
 
-        //如果按下Trigger則抓取物品  //如果正在抓取則返回
+        //如果按下Trigger則抓取物品  
         if (m_Hand_Trigger.GetStateUp(m_Source))
         {
+            var cols = Physics.OverlapSphere(transform.position, .2f);
+            print(cols.Length);
+            Collider item = null;
+            foreach (var col in cols)
+            {
+                if (!col.transform.root.CompareTag("Item")) continue;
+                if (item == null)
+                {
+                    item = col;
+                }
+                else
+                {
+                    float disA = Vector3.Distance(transform.position, item.transform.position);
+                    float disB = Vector3.Distance(transform.position, col.transform.position);
+                    item = disA < disB ? item : col;
+                }
+            }
+            if (!item)
+                return;
+            print(IsCatching);
             if (!IsCatching)
             {
                 //增加關節至手掌
@@ -56,8 +72,10 @@ public class PlayerHandEvent : MonoBehaviour {
                 m_CurrentCatchRigidbody = item.GetComponent<Rigidbody>();
                 m_CurrentCatchRigidbody.transform.SetParent(transform);
                 m_CurrentCatchRigidbody.useGravity = false;
+                m_CurrentCatchRigidbody.isKinematic = true;
 
                 IsCatching = true;
+                item.tag = "Catched";
             }
             else
                 Throw();
@@ -70,11 +88,7 @@ public class PlayerHandEvent : MonoBehaviour {
         if (m_CurrentCatchJoint)
         {
             EndThrowPos = m_CurrentCatchJoint.transform.position;
-
-
             Destroy(m_CurrentCatchJoint);
-            m_CurrentCatchRigidbody.transform.SetParent(null);
-            m_CurrentCatchRigidbody.useGravity = true;
             m_CurrentCatchJoint = null;
         }
         if (m_CurrentCatchRigidbody)
@@ -88,12 +102,16 @@ public class PlayerHandEvent : MonoBehaviour {
             {
                 origin = m_TrackedObject.transform.parent;
             }
-
+            m_CurrentCatchRigidbody.transform.SetParent(null);
+            m_CurrentCatchRigidbody.useGravity = true;
             m_CurrentCatchRigidbody.velocity = origin.TransformVector(m_TrackedObject.GetVelocity());
             m_CurrentCatchRigidbody.angularVelocity = origin.TransformVector(m_TrackedObject.GetAngularVelocity());
+            m_CurrentCatchRigidbody.isKinematic = false;
+            m_CurrentCatchRigidbody.transform.tag = "Item";
             m_CurrentCatchRigidbody = null;
         }
 
         IsCatching = false;
+        
     }
 }
