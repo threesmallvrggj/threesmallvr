@@ -4,8 +4,10 @@ using UnityEngine;
 using Valve.VR;
 
 public class PlayerMove : MonoBehaviour {
-    public SteamVR_Action_Boolean TouchPad;
+    public SteamVR_Action_Boolean TouchPad,Grab;
     public SteamVR_Action_Vector2 TouchPadAxis;
+
+
     public SteamVR_Input_Sources Sources;
     public Transform CameraTrans;
 
@@ -58,5 +60,12 @@ public class PlayerMove : MonoBehaviour {
         }
         else
             m_Animator.SetBool("Walk", false);
+    }
+    private void Jump()
+    {
+        if(Grab.GetStateDown(SteamVR_Input_Sources.LeftHand)&& Grab.GetStateDown(SteamVR_Input_Sources.RightHand))
+        {
+
+        }
     }
 }

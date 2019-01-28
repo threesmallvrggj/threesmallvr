@@ -47,7 +47,6 @@ public class PlayerHandEvent : MonoBehaviour {
             if (!IsCatching)
             {
                 var cols = Physics.OverlapSphere(transform.position, .2f);
-                print(cols.Length);
                 Collider item = null;
                 foreach (var col in cols)
                 {
