@@ -42,28 +42,29 @@ public class PlayerHandEvent : MonoBehaviour {
         //如果按下Trigger則抓取物品  
         if (m_Hand_Trigger.GetStateUp(m_Source))
         {
-            var cols = Physics.OverlapSphere(transform.position, .2f);
-            print(cols.Length);
-            Collider item = null;
-            foreach (var col in cols)
-            {
-                if (!col.transform.root.CompareTag("Item")) continue;
-                if (item == null)
-                {
-                    item = col;
-                }
-                else
-                {
-                    float disA = Vector3.Distance(transform.position, item.transform.position);
-                    float disB = Vector3.Distance(transform.position, col.transform.position);
-                    item = disA < disB ? item : col;
-                }
-            }
-            if (!item)
-                return;
+
             print(IsCatching);
             if (!IsCatching)
             {
+                var cols = Physics.OverlapSphere(transform.position, .2f);
+                print(cols.Length);
+                Collider item = null;
+                foreach (var col in cols)
+                {
+                    if (!col.transform.root.CompareTag("Item")) continue;
+                    if (item == null)
+                    {
+                        item = col;
+                    }
+                    else
+                    {
+                        float disA = Vector3.Distance(transform.position, item.transform.position);
+                        float disB = Vector3.Distance(transform.position, col.transform.position);
+                        item = disA < disB ? item : col;
+                    }
+                }
+                if (!item)
+                    return;
                 //增加關節至手掌
                 m_CurrentCatchJoint = item.gameObject.AddComponent<FixedJoint>();
                 //m_CurrentCatchJoint.transform.position = transform.position;
@@ -72,7 +73,7 @@ public class PlayerHandEvent : MonoBehaviour {
                 m_CurrentCatchRigidbody = item.GetComponent<Rigidbody>();
                 m_CurrentCatchRigidbody.transform.SetParent(transform);
                 m_CurrentCatchRigidbody.useGravity = false;
-                m_CurrentCatchRigidbody.isKinematic = true;
+                //m_CurrentCatchRigidbody.isKinematic = true;
 
                 IsCatching = true;
                 item.tag = "Catched";
