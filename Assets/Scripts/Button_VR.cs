@@ -4,21 +4,12 @@ using UnityEngine;
 using UnityEngine.Events;
 
 public class Button_VR : MonoBehaviour {
-
-    public UnityEvent OnTouch;
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
+    [SerializeField]
+    private UnityEvent OnTouch;
+    
     private void OnTriggerEnter(Collider other)
     {
+        print("touched");
         OnTouch.Invoke();
     }
 }
