@@ -34,19 +34,30 @@ public class PhotonManager : Photon.PunBehaviour {
 
     //房間設定&開、進房間，註冊給開始按鈕
     public void JoinRoom()
-    {
-
+    {        
         RoomOptions room = new RoomOptions { MaxPlayers = 2 };
         PhotonNetwork.JoinOrCreateRoom("GameRoom", room, TypedLobby.Default);
+
+        
+        
     }
 
     public override void OnJoinedRoom()
     {
         print("已加入房間，目前共"+PhotonNetwork.room.MaxPlayers +"人");
-        //進入房間後轉場景，生成玩家
+        //進入房間後轉場景，生成玩家，保留PhotonManager
         DontDestroyOnLoad(this);
-        async.allowSceneActivation = true;
-        CreatePlayer();
+
+        if (PhotonNetwork.room.PlayerCount == PhotonNetwork.room.MaxPlayers)
+        {
+            async.allowSceneActivation = true;
+            while (!async.isDone)
+            {
+                CreatePlayer();
+            }
+        }
+        
+            
     }
 
     
