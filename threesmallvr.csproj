@@ -252,8 +252,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\BattleSystem.cs" />
-    <Compile Include="Assets\HurtDetector.cs" />
+    <Compile Include="Assets\AudioManager.cs" />
+    <Compile Include="Assets\FXManager.cs" />
     <Compile Include="Assets\Knight\scripts\rotator.cs" />
     <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\CustomTypes.cs" />
     <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\Enums.cs" />
@@ -325,10 +325,12 @@
     <Compile Include="Assets\PhotonChatApi\ChatState.cs" />
     <Compile Include="Assets\PhotonChatApi\ChatUserStatus.cs" />
     <Compile Include="Assets\PhotonChatApi\IChatClientListener.cs" />
-    <Compile Include="Assets\PlayerHud.cs" />
+    <Compile Include="Assets\Scripts\BattleSystem.cs" />
     <Compile Include="Assets\Scripts\Button_VR.cs" />
+    <Compile Include="Assets\Scripts\HurtDetector.cs" />
     <Compile Include="Assets\Scripts\PhotonManager.cs" />
     <Compile Include="Assets\Scripts\PlayerHandEvent.cs" />
+    <Compile Include="Assets\Scripts\PlayerHud.cs" />
     <Compile Include="Assets\Scripts\PlayerIK.cs" />
     <Compile Include="Assets\Scripts\PlayerMove.cs" />
     <Compile Include="Assets\SteamVR\Extras\SteamVR_GazeTracker.cs" />
